@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'mediplus-j6xih9ca8-priya1229s-projects.vercel.app',
-    'https://mediplusbackend.vercel.app/',
+    'mediplusbackend.vercel.app',
     'localhost',
     '127.0.0.1',
     '127.0.0.1:8000',
