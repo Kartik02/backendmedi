@@ -25,7 +25,14 @@ SECRET_KEY = 'django-insecure-@r@^bugu%o3^a-(b5rm_9nrayluw83_$rb=g6-@ozyq&gva(v!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'mediplus-j6xih9ca8-priya1229s-projects.vercel.app',
+    'https://mediplusbackend.vercel.app/',
+    'localhost',
+    '127.0.0.1',
+    '127.0.0.1:8000',
+    
+]
 
 
 # Application definition
