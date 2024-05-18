@@ -89,13 +89,17 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import os
 import dj_database_url
+
+DATABASE_URL = os.environ.get('DATABASE_URL', 'postgres://postgres:root@localhost:5432/mediplus')
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://postgres:root@localhost:5432/mediplus'
+        default=DATABASE_URL
     )
 }
+
 
 
 
