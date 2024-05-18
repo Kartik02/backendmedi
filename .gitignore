@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]  # This covers .pyc, .pyo, and .pyd files
+
+# Django stuff:
+db.sqlite3
+*.log
+local_settings.py
+
+# Media and static files (if these should not be tracked)
+media/
+static/
+
+# PyBuilder
+target/
+
+# Migration files in Django apps
+*/migrations/*.py
+!*/migrations/__init__.py
