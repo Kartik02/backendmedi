@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'mediplus-j6xih9ca8-priya1229s-projects.vercel.app',
-    'backendmedi-i53rkedqt-kartik02s-projects.vercel.app',
     'mediplusbackend.vercel.app',
     'backendmedi.vercel.app',
     'localhost',
@@ -90,23 +89,23 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# import os
-# import dj_database_url
+import os
+import dj_database_url
 
-# DATABASE_URL = os.environ.get('DATABASE_URL', 'postgres://postgres:root@localhost:5432/mediplus')
-
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default=DATABASE_URL
-#     )
-# }
+DATABASE_URL = os.environ.get('DATABASE_URL', 'postgres://postgres:root@localhost:5432/mediplus')
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=DATABASE_URL
+    )
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 
