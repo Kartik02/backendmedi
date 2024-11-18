@@ -90,15 +90,22 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-import os
-import dj_database_url
+# import os
+# import dj_database_url
 
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgres://postgres:root@localhost:5432/mediplus')
+# DATABASE_URL = os.environ.get('DATABASE_URL', 'postgres://postgres:root@localhost:5432/mediplus')
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=DATABASE_URL
+#     )
+# }
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=DATABASE_URL
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
