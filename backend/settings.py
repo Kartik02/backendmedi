@@ -27,12 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'mediplus-j6xih9ca8-priya1229s-projects.vercel.app',
+    'backendmedi-i53rkedqt-kartik02s-projects.vercel.app',
     'mediplusbackend.vercel.app',
     'backendmedi.vercel.app',
     'localhost',
     '127.0.0.1',
     '127.0.0.1:8000',
-    
 ]
 
 
