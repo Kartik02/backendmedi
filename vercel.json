@@ -3,10 +3,6 @@
         {
             "src": "backend/wsgi.py",
             "use": "@vercel/python"
-        },
-        {
-            "src": "build_files.sh",
-            "use": "@vercel/static-build"
         }
     ],
     "routes": [
@@ -14,5 +10,8 @@
             "src": "/(.*)",
             "dest": "backend/wsgi.py"
         }
-    ]
+    ],
+    "hooks": {
+        "build": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    }
 }
