@@ -18,6 +18,8 @@ from .serializers import ProductSerializer,CategorySerializer, DeliveryInfoSeria
 from django.core.paginator import Paginator
 from .serializers import UserLoginSerializer
 from django.contrib.auth import authenticate, login
+from .models import Order
+from .serializers import OrderSerializer
 # views.py
 
 from rest_framework import generics
@@ -154,3 +156,8 @@ def get_deliveryinfo(request, patient_id):
         "zipcode": patient.zipcode
     }
     return JsonResponse(data)
+
+
+class OrderViewSet(viewsets.ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer

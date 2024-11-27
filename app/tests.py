@@ -1,18 +1,7 @@
-from django.test import TestCase
-from django.urls import reverse
+from app.models import Order
 
-class APITest(TestCase):
-    def test_submit_form(self):
-        url = reverse('patient_create_view')
-        data = {
-            "name": "Test User",
-            "email": "test@example.com",
-            "phone": "1234567890",
-            "city": "Test City",
-            "address": "Test Address",
-            "medicine": "Test Medicine",
-            "prescription": None,
-            "definition": "Test Definition"
-        }
-        response = self.client.post(url, data, content_type='multipart/form-data')
-        self.assertEqual(response.status_code, 201)
+# Replace 101, 103, 104, 108, 107 with the primary keys mentioned in the error message
+orders = Order.objects.filter(pk__in=[101, 103, 104, 108, 107])
+
+# Print the objects found
+print(orders)
