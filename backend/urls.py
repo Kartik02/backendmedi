@@ -21,4 +21,6 @@ urlpatterns = [
     path('api/', include('app.urls')),
     path('', RedirectView.as_view(url='/admin/')),
     path('api/auth/', include('app.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
