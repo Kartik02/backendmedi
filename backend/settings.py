@@ -68,7 +68,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True  # For development only
+CORS_ALLOW_ALL_ORIGINS = config('CORS_ALLOW_ALL_ORIGINS', default=False, cast=bool)
 
 
 ROOT_URLCONF = 'backend.urls'
@@ -95,6 +95,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Instead of sqlite we using supabase-postgresql in vercel
 
 DATABASES = {
     'default': {
