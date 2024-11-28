@@ -30,6 +30,8 @@ DEBUG = config('DEBUG', default=False, cast=bool) #FOR PRODUCTION
 ALLOWED_HOSTS = [
     'mediplus-j6xih9ca8-priya1229s-projects.vercel.app',
     'mediplusbackend.vercel.app',
+    'medi-plus.vercel.app',
+    'medi-plus-beta.vercel.app',
     'backendmedi.vercel.app',
     '.vercel.app',
     'localhost',
@@ -68,8 +70,39 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    'mediplus-j6xih9ca8-priya1229s-projects.vercel.app',
+    'mediplusbackend.vercel.app',
+    'medi-plus.vercel.app',
+    'medi-plus-beta.vercel.app',
+    'backendmedi.vercel.app',
+    '.vercel.app',
+    'localhost',
+    '127.0.0.1',
+    '127.0.0.1:8000',
+]
+
 CORS_ALLOW_ALL_ORIGINS = config('CORS_ALLOW_ALL_ORIGINS', default=False, cast=bool)
 
+# Optionally, you can also allow specific HTTP methods
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS"
+]
+
+# Optionally, allow specific headers
+CORS_ALLOW_HEADERS = [
+    "content-type",
+    "authorization",
+    # Add other headers as needed
+]
+
+# If you want to allow credentials (cookies, authorization headers)
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'backend.urls'
 
